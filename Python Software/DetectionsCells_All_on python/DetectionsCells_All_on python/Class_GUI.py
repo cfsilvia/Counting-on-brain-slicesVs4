@@ -156,6 +156,8 @@ class Class_GUI:
             Class_GUI.condition5(Folder_with_data, Type_of_stains, save_as_zip, roi_atlas, scale),
         elif (var1,var3,var6,var2) == (True, True, False, True):
             Class_GUI.condition6(Folder_with_data, Type_of_stains, save_as_zip, roi_atlas, scale)
+        elif (var1,var3,var6,var2) == (False, True, False, True):
+            Class_GUI.condition7(Folder_with_data, Type_of_stains, roi_atlas, scale)
 
      
     def condition1(Folder_with_data, Type_of_stains, save_as_zip):#finding labels
@@ -186,6 +188,11 @@ class Class_GUI:
         Class_GUI.condition1(Folder_with_data, Type_of_stains, save_as_zip)
         Class_GUI.condition2(Folder_with_data, Type_of_stains, roi_atlas,scale)
         Class_GUI.condition4(Folder_with_data, Type_of_stains)
+    def condition7(Folder_with_data, Type_of_stains, roi_atlas, scale): # all conditions excep overlap and finding levels
+        Class_GUI.condition2(Folder_with_data, Type_of_stains, roi_atlas,scale)
+        Class_GUI.condition4(Folder_with_data, Type_of_stains)
+    
+    
     
     def OK_action():
         #get variables

@@ -51,7 +51,7 @@ class Class_Helper:
 
 
          # Append data to the DataFrame
-         df = df._append(new_df, ignore_index=False)
+         df = df.append(new_df, ignore_index=False)
          return df
      
     def addToDataframe(df,filename, number_labels_within_mask,area_mask_pixel,
@@ -63,7 +63,7 @@ class Class_Helper:
          # Convert new_data to DataFrame
          new_df = pd.DataFrame(data)
          # Append data to the DataFrame
-         df = df._append(new_df, ignore_index=False)
+         df = df.append(new_df, ignore_index=False)
          return df
      
     '''-6 convert data into tuple'''
