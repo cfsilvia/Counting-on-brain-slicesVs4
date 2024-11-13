@@ -1,2 +1,4 @@
-# cfsilvia-Counting-on-brain-slicesVs4
-Counting labels in slice scan images- november 2024
+Counting cells and nuclei
+Labeling each brain slice and counting each region found after alignment with the atlas. Important to convert rois into mask after applying the labeling and counting.
+Labeling and counting of single regions. The rois are marked in imagej. The script accept rois in the Roi folder.
+Post processing process.

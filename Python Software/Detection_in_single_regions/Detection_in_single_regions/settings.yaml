@@ -1,0 +1,48 @@
+model_directory:
+  #training model of oxytocin trained in mouse is: X:/Users/LabSoftware/ImageJSoftware/AutomaticCounting/Oxytocin_model/models
+  Oxytocin: X:/Users/LabSoftware/ImageJSoftware/AutomaticCounting/Oxytocin_model/models
+  
+  #training model of TH trained on blind moles is: X:/Users/LabSoftware/ImageJSoftware/AutomaticCounting/TH_model/models
+  TH: X:/Users/LabSoftware/ImageJSoftware/AutomaticCounting/TH_model/models
+  
+  #for cfos , we used standard model  of stardist package
+  Cfos: default_Stardist
+  
+  #training model of vasopresin trained in blind moles is: X:/Users/LabSoftware/ImageJSoftware/AutomaticCounting/Vasopressin_model/models
+  Vasopresin: X:/Users/LabSoftware/ImageJSoftware/AutomaticCounting/Vasopressin_model/models
+  
+filter_found_labels:
+  Oxytocin: false
+  TH: false
+  Cfos: true
+  Vasopresin: false
+
+Properties_filters:
+  Oxytocin:
+    #minimum area- -1 no filter
+    - -1
+    #maximum area- -1 no filter
+    - -1
+    #factor of min(intensity)to remove- -1 no filter
+    - 3
+  TH:
+    #minimum area- -1 no filter
+    - -1
+    #maximum area- -1 no filter
+    - -1
+    #factor of min(intensity)to remove- -1 no filter
+    - 3
+  Cfos:
+    #minimum area- -1 no filter
+    - 120
+    #maximum area- -1 no filter
+    - 900
+    #factor of min(intensity)to remove- -1 no filter
+    - 1.5
+  Vasopresin:
+    #minimum area- -1 no filter
+    - -1
+    #maximum area- -1 no filter
+    - -1
+    #factor of min(intensity)to remove- -1 no filter
+    - 3  
