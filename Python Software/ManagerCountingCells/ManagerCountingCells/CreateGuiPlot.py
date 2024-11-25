@@ -20,7 +20,7 @@ def on_ok_button():
        messagebox.showinfo("NOTE", "SAVE IN THE SAME FOLDER THE EXCELS YOU WANT TO COMPARE,\n Add to the name of each file _bath _type as _440_old \n e.g. THE FILE SHOULD BE RENAME AS TotalDataVs1_440_male")
        print(5)#post plotting in R 
     elif variable.get() == "Get Summarize results in excel file":
-       messagebox.showinfo("NOTE", "SAVE IN THE SAME FOLDER THE EXCELS YOU WANT TO COMPARE,\n Add to the name of each file (in the end)  _type as _old")
+       messagebox.showinfo("NOTE", "SAVE IN THE SAME FOLDER THE EXCELS YOU WANT TO COMPARE,\n Add to the name of each file (in the end)  _bath _type as _440_old \n e.g. THE FILE SHOULD BE RENAME AS TotalDataVs1_440_male")
        print(6)#post plotting in R 
     elif variable.get() == "Get Summarize results in plot bar":
        print(7)#post plotting in R 
