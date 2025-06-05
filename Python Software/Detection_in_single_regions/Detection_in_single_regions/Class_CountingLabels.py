@@ -33,10 +33,10 @@ class Class_CountingLabels:
         labels_coord = details_stardist[index_list,:,:]
         return number_labels_within_mask,area_mask_pixel,labels_coord
        
-        number_labels_within_mask = details_stardist.shape[0]
-        polygon = Polygon(list_roi_coord)
-        area_mask_pixel = polygon.area
-        return number_labels_within_mask,area_mask_pixel
+      #   number_labels_within_mask = details_stardist.shape[0]
+      #   polygon = Polygon(list_roi_coord)
+      #   area_mask_pixel = polygon.area
+      #   return number_labels_within_mask,area_mask_pixel
          
      '''
     -2- Find overlapped labels between two stainings- The idea is to find the intersection and check that there are 80 intersection.
