@@ -51,7 +51,7 @@ class get_region_to_label:
             model = Class_FindLabels.Stardist_model(self.stain, self.model_dir)
             labels,details = Class_FindLabels.Stardist_prediction(model,cropped_image,self.stain) 
             #%% Filter in specified cases labels-
-            if (self.filter_labels == True) and (len(details['coord']) > 0):
+            if (self.filter_labels == True) and (len(details['coord']) > 0) and not(np.all(labels == 0)): #Addition 28-may
                 print("Filter: ", self.stain)
                 labels,details = Class_FilterData.FilterData(labels, cropped_image,details,self.filtered_settings)
            

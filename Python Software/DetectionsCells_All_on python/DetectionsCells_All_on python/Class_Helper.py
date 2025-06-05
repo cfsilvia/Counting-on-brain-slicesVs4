@@ -34,7 +34,7 @@ class Class_Helper:
           column_names = ['Brain slice', 'Number of Labels', 'Area of all the ROI mmxmm',
                           'Region considered']
           df = pd.DataFrame(columns=column_names)
-          return df
+        return df
           
     def addToDataframeAtlas(df,filename, number_labels_within_mask,area_mask_pixel,
                       number_labels_within_mask_L, area_side_mask_pixel_L,
@@ -51,7 +51,8 @@ class Class_Helper:
 
 
          # Append data to the DataFrame
-         df = df.append(new_df, ignore_index=False)
+         
+         df = pd.concat([df, new_df], axis=0, ignore_index=True)
          return df
      
     def addToDataframe(df,filename, number_labels_within_mask,area_mask_pixel,

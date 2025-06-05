@@ -5,7 +5,7 @@ File.makeDirectory(inputDir + "ROI_Into_Mask/");
 
 title = "Choose the staining type";
 Dialog.create(title);
-Dialog.addChoice("Type of Staining (as oxytocin):", newArray("Cherry", "Oxytocin","Vasopresin","TH","Cfos")); //this is the name of the folder
+Dialog.addChoice("Type of Staining (as oxytocin):", newArray("Cherry", "Oxytocin","Vasopresin","TH","Cfos","OTR")); //this is the name of the folder
 Dialog.show();
 StainCell = Dialog.getChoice();
 /////////////////////////////////////

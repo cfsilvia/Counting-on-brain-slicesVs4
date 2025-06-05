@@ -64,6 +64,7 @@ class Class_Main_Manager:
         count_file = 0
         for f in Staining_dict[self.Type_of_staining[0]]:
             filename, number_slice = Class_Main_Manager.getFileInf(f)
+            print(filename)
             instance_roi = Read_Roi_imagej(f)
             list_roi_names, list_roi_coord = instance_roi()
             df_total = Class_Main_Manager.ManagerThirdStep(list_roi_names, list_roi_coord ,Staining_dict,count_file,self.Type_of_staining,self.Folder_with_data, model_dictionary,filter_dictionary,filtered_settings_dictionary)

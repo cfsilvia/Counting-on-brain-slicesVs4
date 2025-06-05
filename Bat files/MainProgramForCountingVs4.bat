@@ -2,7 +2,7 @@
 @echo off
 ::call activate [base]
 :: cmd/k prevent to close bat file
-python "X:\Users\LabSoftware\Counting on brain slicesVs3\Python Software\ManagerCountingCells\ManagerCountingCells\MainProgramForCountingCells.py" > output.txt
+python "X:\Users\LabSoftware\Counting on brain slicesVs4\Python Software\ManagerCountingCells\ManagerCountingCells\MainProgramForCountingCells.py" > output.txt
 
 
 timeout /t 5 /nobreak >nul

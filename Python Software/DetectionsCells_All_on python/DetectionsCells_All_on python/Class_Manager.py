@@ -128,6 +128,7 @@ class Class_Manager:
         #close the pool
         pool.close()
         pool.join() #Wait for all process to finish
+        Class_Manager.ManagerThirdStep(data[0])
            
     '''
     --3- Take each slice and found the labels inside each mask -go through the mask and create a datframe to save as csv
@@ -153,7 +154,7 @@ class Class_Manager:
         details_stardist = Class_CountingLabels.LoadPickle(Details_file)
         #go through the masks
         mask_files = sorted(glob( mask_dir +'*.tif'))
-        df = pd.DataFrame()
+        #df = pd.DataFrame() CHANGE NOW
         for index in range(len(mask_files)):
             number_labels_within_mask, new_details_within_mask,area_mask_pixel = Class_CountingLabels.FindLabels_WithinMask(mask_files[index], details_stardist)
             #get name of the region
