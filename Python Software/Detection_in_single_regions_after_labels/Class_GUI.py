@@ -171,8 +171,6 @@ class Class_GUI:
         #%% find the conditions of the checkbox
         var1 = check_var1.get()
         var3 = check_var3.get()
-        var1 = True
-        save_as_zip =True
        
         Class_GUI.simplify_conditions(var1, var3, 
                             Folder_with_data, Type_of_stains, save_as_zip,scale)

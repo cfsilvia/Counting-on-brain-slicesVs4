@@ -2,7 +2,18 @@
 @echo off
 ::call activate [base]
 :: cmd/k prevent to close bat file
-python "X:\Users\LabSoftware\Counting on brain slicesVs4\Python Software\ManagerCountingCells\ManagerCountingCells\MainProgramForCountingCells.py" > output.txt
+
+rem use letter U only to arrange things if not C to all the computers
+rem set drive_letter=U:\LabSoftware\AutomaticCountingCells
+set conda_environment=StardistForImagej
+set conda_path=C:\Users\Administrator\anaconda3
+setlocal
+
+REM Read the first line of config.txt into the variable 'drive_letter'
+set /p drive_letter=<config.txt
+
+call %conda_path%\Scripts\activate %conda_environment%
+python "%drive_letter%\Counting-on-brain-slicesVs4\Python Software\ManagerCountingCells\ManagerCountingCells\MainProgramForCountingCells.py" > output.txt
 
 
 timeout /t 5 /nobreak >nul
@@ -59,6 +70,6 @@ if "%pythonOutput%" equ "3" (
 
 
 :: Check if pythonOutput is 3
-   
+call %conda_path%\Scripts\deactivate   
 pause
 :: call  

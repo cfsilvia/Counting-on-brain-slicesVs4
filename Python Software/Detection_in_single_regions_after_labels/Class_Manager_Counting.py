@@ -6,6 +6,7 @@ Created on Mon Jul  8 09:11:00 2024
 """
 
 from glob  import glob
+import traceback
 from get_info_file import Read_Roi_imagej
 from  Class_CountingLabels import  Class_CountingLabels
 import pandas as pd
@@ -14,6 +15,7 @@ from itertools import combinations
 from Class_FindLabels import Class_FindLabels
 from get_slice_labels import get_slice_labels
 import cv2
+import numpy as np
 
 class Class_Manager_Counting:
     
@@ -65,9 +67,12 @@ class Class_Manager_Counting:
             print(count_file)
             print(f)
             count_file += 1
-          except:
-              print("no roi")
-              
+          except Exception as e:
+   
+            print("ERROR processing:", f)
+            print("Error message:", e)
+            traceback.print_exc()
+                    
         return df_all_files
     
     
@@ -171,7 +176,18 @@ class Class_Manager_Counting:
     #%% go through each staining
         for key in labels_coord:
             file_path = Folder_with_data + 'Roi_of_labels/' + file_name_without_extension + '/'  + file_name_without_extension + '_' + key + '_' + rois + '.zip'
-            Class_FindLabels.SaveAs_zip(labels_coord[key],file_path)
+           # Class_FindLabels.SaveAs_zip(labels_coord[key],file_path)
+            
+
+            polygons = labels_coord[key]
+
+            if len(polygons) > 0:
+                coord_array = np.array([
+                    np.array(poly.exterior.coords).T
+                    for poly in polygons
+                ])
+
+                Class_FindLabels.SaveAs_zip(coord_array, file_path)
     
     '''
      Resume all th functions

@@ -117,6 +117,8 @@ class Class_Main_Manager:
         number_labels ={}
         labels_coord_within_mask = {}
         for staining in Type_of_staining:
+            print(staining)
+            print(count_file)
             filename = Staining_dict[staining][count_file]
             instance_labels = get_region_to_label(filename, roi_coord, staining, model_dictionary[staining], filter_dictionary[staining],filtered_settings_dictionary[staining])
             labels_coord[staining] = instance_labels() #this includes labels which are outside the mask
